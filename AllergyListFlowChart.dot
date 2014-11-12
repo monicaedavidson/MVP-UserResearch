@@ -1,0 +1,36 @@
+//User Flow for Allergy Awareness List - 11/12/14 MVP Version 1.0
+digraph AllergyAwarenessList {
+  nodesep=1.0 //space between nodes
+  node[shape=box]
+  a[label="Initial Point of Entry / About Page"]
+  b[label="Here to create a New Profile or see an Existing Profile?"]
+  d[label="Prompt: 'Please contact the profile's creator for the full URL'"]
+  e[label="Privacy Warning / We're not HIPPA notice"]
+  f[label="Enter Child's Name/ID"]
+  g[label="Enter Child's Allergies"]
+  g2[label="Edit/Delete"]
+  g3[label="Add another child"]
+  h[label="Publish"]
+  i[label="Display Draft - Looks OK?"]
+  j[label="Output URL (Link)"]
+  k[label="Complete Allergy List for Child"]
+  m[label="Created it and want to edit"]
+
+  a -> b;
+  b -> e[label="New Profile"]
+  b -> d[label="Existing Profile"]
+  e -> f
+  f -> g
+  g -> g2[label="Direct Manipulation"]
+  g2 -> g
+  g -> g3
+  g3 -> f
+  g -> h
+  h -> i
+  i -> f[label="Needs Changes"]
+  i -> j[label="Looks OK"]
+  j -> k
+  d -> k[label="Get Full URL"]
+  d -> m
+  m -> e
+}
