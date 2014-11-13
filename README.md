@@ -11,3 +11,4 @@
   - Landing / About Page
   - Input / Creating a New list
   - Output / Complete Allergy List
+- Style Tile
